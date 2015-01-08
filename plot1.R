@@ -1,7 +1,9 @@
 library("graphics")
 library("grDevices")
 library("data.table")
-data=fread("../data.txt",sep=";",header=T)
+
+#假设所需要的数据文件在当前工作目录下，并且命名为data.txt
+data=fread("data.txt",sep=";",header=T)
 
 data1=data[which(strptime(data$Date, "%d/%m/%Y")=="2007-02-01 CST"),]
 data2=data[which(strptime(data$Date, "%d/%m/%Y")=="2007-02-02 CST"),]
